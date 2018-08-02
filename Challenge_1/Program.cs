@@ -10,20 +10,19 @@ namespace Challenge_1
     {
         static void Main(string[] args)
         {
+            ProgramUI _cafeMenuUI = new ProgramUI();
+
             CafeMenu chickenTenders = new CafeMenu("Chicken Tenders", 1, "Crispy delicious chicken tenders.", "Chicken, Breading, Fries, BBQ Sauce", 9.95m);
             CafeMenu bltPanini = new CafeMenu("BLT Panini", 2, "Lightly toasted BLT Panini made with apple wood bacon.", "Apple wood bacon, Tomatoes, lettuce, bread", 7.50m);
             CafeMenu cheeseburger = new CafeMenu("Cheeseburger", 3, "Incredible cheeseburger made with your chose of cheese.", "Ground beef, Cheese, Bread, Ketchup, Mustard", 10.50m);
             CafeMenu salad = new CafeMenu("Salad", 4, "Stay healthy with this salad. Plant Power!", "Greens, Tomatoes, Plant protein, Dressing", 8.95m);
             CafeMenu kidsMacCheese = new CafeMenu("Kids Mac and Cheese", 5, "Every kids favorite meal Mac and Cheese.", "Pasta, cheese", 6.50m);
 
-            MenuRepository _cafeMenu = new MenuRepository();
-
-            _cafeMenu.AddItemToMenu(chickenTenders);
-            _cafeMenu.AddItemToMenu(bltPanini);
-            _cafeMenu.AddItemToMenu(cheeseburger);
-            _cafeMenu.AddItemToMenu(salad);
-            _cafeMenu.AddItemToMenu(kidsMacCheese);
-
+            _cafeMenuUI.AddItemToMenu(chickenTenders);
+            _cafeMenuUI.AddItemToMenu(bltPanini);
+            _cafeMenuUI.AddItemToMenu(cheeseburger);
+            _cafeMenuUI.AddItemToMenu(salad);
+            _cafeMenuUI.AddItemToMenu(kidsMacCheese);
 
             bool displayMenu = true;
             while (displayMenu)
@@ -43,17 +42,17 @@ namespace Challenge_1
                 string result = Console.ReadLine();
                 if (result == "1")
                 {
-                    _cafeMenu.PrintAllMenuItemswithDetails();
+                    _cafeMenuUI.PrintAllMenuItemswithDetails();
                     return true;
                 }
                 else if (result == "2")
                 {
-                    _cafeMenu.AddMealByName();
+                    _cafeMenuUI.AddMealByName();
                     return true;
                 }
                 else if (result == "3")
                 {
-                    _cafeMenu.RemoveMealByName();
+                    _cafeMenuUI.RemoveMealByName();
                     return true;
                 }
                 else if (result == "4")

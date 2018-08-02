@@ -12,15 +12,15 @@ namespace Challenge_2_Tests
         public void Claim_AddToQueue_ShouldAddToQueue()
         {
             //-- Arrange
-            ClaimRepository _claimRepo = new ClaimRepository();
+            ClaimRepository _claim = new ClaimRepository();
             DateTime date1 = new DateTime(2018, 4, 25);
             DateTime date2 = new DateTime(2018, 4, 27);
             Claim claim1 = new Claim(1, "Car", "Car accident on 465.", 400.00m, date1, date2);
-            _claimRepo.AddClaimToQueue(claim1);
+            _claim.AddClaimToQueue(claim1);
 
             //-- Act
             int expected = 1;
-            int actual = _claimRepo.GetCount();
+            int actual = _claim.GetCount();
 
             //-- Assert
             Assert.AreEqual(expected, actual);
@@ -30,16 +30,16 @@ namespace Challenge_2_Tests
         public void Claim_RemoveClaim_ShouldRemoveClaim()
         {
             //-- Arrange
-            ClaimRepository _claimRepo = new ClaimRepository();
+            ClaimRepository _claim = new ClaimRepository();
             DateTime date1 = new DateTime(2018, 4, 25);
             DateTime date2 = new DateTime(2018, 4, 27);
             Claim claim1 = new Claim(1, "Car", "Car accident on 465.", 400.00m, date1, date2);
-            _claimRepo.AddClaimToQueue(claim1);
-            _claimRepo.RemoveClaim();
+            _claim.AddClaimToQueue(claim1);
+            _claim.RemoveClaim();
 
             //-- Act
             int expected = 0;
-            int actual = _claimRepo.GetCount();
+            int actual = _claim.GetCount();
 
             //-- Assert
             Assert.AreEqual(expected, actual);
@@ -49,12 +49,12 @@ namespace Challenge_2_Tests
         public void Claim_GetList_ShouldGetList()
         {
             //-- Arrange
-            ClaimRepository _claimRepo = new ClaimRepository();
+            ClaimRepository _claim = new ClaimRepository();
             DateTime date1 = new DateTime(2018, 4, 25);
             DateTime date2 = new DateTime(2018, 4, 27);
             Claim claim1 = new Claim(1, "Car", "Car accident on 465.", 400.00m, date1, date2);
-            _claimRepo.AddClaimToQueue(claim1);
-            Queue<Claim> _testRepo = _claimRepo.GetList();
+            _claim.AddClaimToQueue(claim1);
+            Queue<Claim> _testRepo = _claim.GetList();
 
             //-- Act
             int expected = 1;
