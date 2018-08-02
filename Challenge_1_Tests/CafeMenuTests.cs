@@ -12,13 +12,13 @@ namespace Challenge_1_Tests
         public void Menu_AddToMenu_ShouldAddToMenu()
         {
             //-- Arrange
-            MenuRepository _cafeMenu = new MenuRepository();
+            MenuRepository _cafeMenuRepo = new MenuRepository();
             CafeMenu cafeMenu1 = new CafeMenu("Chicken Tenders", 1, "Crispy delicious chicken tenders.", "Chicken, Breading, Fries, BBQ Sauce", 9.95m);
-            _cafeMenu.AddItemToMenu(cafeMenu1);
+            _cafeMenuRepo.AddItemToMenu(cafeMenu1);
 
             //-- Act
             int expected = 1;
-            int actual = _cafeMenu.GetCount();
+            int actual = _cafeMenuRepo.GetCount();
 
             //-- Assert
             Assert.AreEqual(expected, actual);
@@ -28,14 +28,14 @@ namespace Challenge_1_Tests
         public void Menu_RemoveFromMenu_ShouldRemoveFromMenu()
         {
             //-- Arrange
-            MenuRepository _cafeMenu = new MenuRepository();
+            MenuRepository _cafeMenuRepo = new MenuRepository();
             CafeMenu cafeMenu1 = new CafeMenu("Chicken Tenders", 1, "Crispy delicious chicken tenders.", "Chicken, Breading, Fries, BBQ Sauce", 9.95m);
-            _cafeMenu.AddItemToMenu(cafeMenu1);
-            _cafeMenu.RemoveItemFromMenu(cafeMenu1);
+            _cafeMenuRepo.AddItemToMenu(cafeMenu1);
+            _cafeMenuRepo.RemoveItemFromMenu(cafeMenu1);
 
             //-- Act
             int expected = 0;
-            int actual = _cafeMenu.GetCount();
+            int actual = _cafeMenuRepo.GetCount();
 
             //-- Assert
             Assert.AreEqual(expected, actual);
@@ -45,10 +45,10 @@ namespace Challenge_1_Tests
         public void Menu_GetList_ShouldGetList()
         {
             //-- Arrange
-            MenuRepository _cafeMenu = new MenuRepository();
+            MenuRepository _cafeMenuRepo = new MenuRepository();
             CafeMenu cafeMenu1 = new CafeMenu("Chicken Tenders", 1, "Crispy delicious chicken tenders.", "Chicken, Breading, Fries, BBQ Sauce", 9.95m);
-            _cafeMenu.AddItemToMenu(cafeMenu1);
-            List<CafeMenu> _testRepo = _cafeMenu.GetList();
+            _cafeMenuRepo.AddItemToMenu(cafeMenu1);
+            List<CafeMenu> _testRepo = _cafeMenuRepo.GetList();
 
             //-- Act
             int expected = 1;
